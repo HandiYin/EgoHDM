@@ -167,44 +167,6 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
-<!-- <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section> -->
-<!-- End image carousel -->
-
-
-
-
 <!-- Youtube video -->
 <section class="hero is-small is-light">
   <div class="hero-body">
@@ -225,15 +187,22 @@
 </section>
 <!-- End youtube video -->
 
-<section class="section" id="method"></section>
-  <div class="container is-max-desktop content">
-    <h2 class="title">Method Overview</h2>
-    <img src="static/images/Overview.png"  height="250" class="center"/>
-    <p>
-      The inputs to EgoHDM are real-time acceleration and orientation measurements from six body-worn IMUs and monocular egocentric RGB images. We first initialize the system (VIM Initialization) by finding a similarity transform \mathbf{T}_{hc} that aligns inertial and camera frames with accurate scale found by leveraging body shape constraints. After initialization, the mocap-aware dense bundle adjustment (MDBA) jointly optimizes camera poses and depth images of keyframes by integrating inertial human motion constraints with RGB-based SLAM. We then construct and maintain a consistent, dense 3D map with global BA and loop closing. To reduce the depth noise influence in our global map, covariance-guided volumetric fusion is employed. Next, we create a local body-centric elevation map with a fixed resolution by projecting the global map along the direction of gravity. Lastly, in the map-aware inertial mocap module, we refine poses provided by an inertial learning-based pose estimator by introducing a physics-based correction module that leverages the elevation map to establish foot-to-ground contact. The corrected poses are fed back to the MDBA, thereby fully closing the loop between inertial-based pose estimation and SLAM-based mapping.
-    </p>
+<section class="section hero is-light" id="method">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method Overview</h2>
+        <img src="static/images/Overview.png" height="250" class="center"/>
+        <div class="content has-text-justified">
+          <p>
+            The inputs to EgoHDM are real-time acceleration and orientation measurements from six body-worn IMUs and monocular egocentric RGB images. We first initialize the system (VIM Initialization) by finding a similarity transform \(\mathbf{T}_{hc}\) that aligns inertial and camera frames with accurate scale found by leveraging body shape constraints. After initialization, the mocap-aware dense bundle adjustment (MDBA) jointly optimizes camera poses and depth images of keyframes by integrating inertial human motion constraints with RGB-based SLAM. We then construct and maintain a consistent, dense 3D map with global BA and loop closing. To reduce the depth noise influence in our global map, covariance-guided volumetric fusion is employed. Next, we create a local body-centric elevation map with a fixed resolution by projecting the global map along the direction of gravity. Lastly, in the map-aware inertial mocap module, we refine poses provided by an inertial learning-based pose estimator by introducing a physics-based correction module that leverages the elevation map to establish foot-to-ground contact. The corrected poses are fed back to the MDBA, thereby fully closing the loop between inertial-based pose estimation and SLAM-based mapping.
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
 
 <!-- Video carousel -->
 <!-- <section class="hero is-small">
