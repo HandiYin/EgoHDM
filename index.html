@@ -212,9 +212,7 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-full">
           <h2 class="title is-3">Method Overview</h2>
-          <figure class="image is-4by3 is-inline-block mx-auto">
-            <img src="static/images/Overview.png" height="250" class="center" style="width: 100%; max-width: 600px; margin: 0 auto; display: block;"/>
-          </figure>
+          <img src="static/images/Overview.png" class="center" style="width: 100%; max-width: 600px; margin: 0 auto; display: block;"/>
           <div class="content has-text-justified mt-4">
             <p>
               The inputs to EgoHDM are real-time acceleration and orientation measurements from six body-worn IMUs and monocular egocentric RGB images. We first initialize the system (VIM Initialization) by finding a similarity transform \(\mathbf{T}_{hc}\) that aligns inertial and camera frames with accurate scale found by leveraging body shape constraints. After initialization, the mocap-aware dense bundle adjustment (MDBA) jointly optimizes camera poses and depth images of keyframes by integrating inertial human motion constraints with RGB-based SLAM. We then construct and maintain a consistent, dense 3D map with global BA and loop closing. To reduce the depth noise influence in our global map, covariance-guided volumetric fusion is employed. Next, we create a local body-centric elevation map with a fixed resolution by projecting the global map along the direction of gravity. Lastly, in the map-aware inertial mocap module, we refine poses provided by an inertial learning-based pose estimator by introducing a physics-based correction module that leverages the elevation map to establish foot-to-ground contact. The corrected poses are fed back to the MDBA, thereby fully closing the loop between inertial-based pose estimation and SLAM-based mapping.
