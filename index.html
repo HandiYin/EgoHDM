@@ -147,14 +147,16 @@
   </div>
 </section>
 
-  <!-- Teaser video-->
-  <section class="hero teaser">
+  <!-- Teaser video -->
+  <section class="section has-background-white">
     <div class="container is-max-desktop">
-      <div class="hero-body">
-        <video poster="" id="tree" autoplay controls muted loop height="100%" style="width: 100%;">
-          <source src="static/videos/teaser.mp4" type="video/mp4">
-        </video>
-        <h2 class="subtitle has-text-centered">
+      <div class="content">
+        <div class="video-container">
+          <video poster="" id="tree" autoplay controls muted loop style="width: 100%;">
+            <source src="static/videos/teaser.mp4" type="video/mp4">
+          </video>
+        </div>
+        <h2 class="subtitle has-text-centered mt-3">
           EgoHDM is an innovative online egocentric-inertial motion capture system that provides near real-time localization and dense scene mapping, enhancing human motion estimation in various terrains.
         </h2>
       </div>
@@ -163,7 +165,7 @@
   <!-- End teaser video -->
 
   <!-- Paper abstract -->
-  <section class="section hero is-light">
+  <section class="section has-background-white">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-full">
@@ -180,16 +182,23 @@
   <!-- End paper abstract -->
 
   <!-- Youtube video -->
-  <section class="hero is-small is-light">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Video</h2>
-        <div class="columns is-centered">
-          <div class="column is-full">
-            <div class="publication-video">
-              <!-- Youtube embed code here -->
-              <iframe width="100%" height="315" src="https://www.youtube.com/embed/L6BIrTWWy_Y?si=JLLmi8u-C5bismKT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
+  <section class="section has-background-white">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Video</h2>
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div class="publication-video">
+            <!-- Youtube embed code here -->
+            <iframe 
+              width="100%" 
+              height="315" 
+              src="https://www.youtube.com/embed/L6BIrTWWy_Y?si=JLLmi8u-C5bismKT" 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin" 
+              allowfullscreen>
+            </iframe>
           </div>
         </div>
       </div>
@@ -197,13 +206,16 @@
   </section>
   <!-- End youtube video -->
 
-  <section class="section hero is-light" id="method">
+  <!-- Method Overview -->
+  <section class="section has-background-white" id="method">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-full">
           <h2 class="title is-3">Method Overview</h2>
-          <img src="static/images/Overview.png" height="250" class="center" style="width: 100%; max-width: 600px; margin: 0 auto; display: block;"/>
-          <div class="content has-text-justified">
+          <figure class="image is-4by3 is-inline-block mx-auto">
+            <img src="static/images/Overview.png" alt="Method Overview Diagram" class="is-fullwidth">
+          </figure>
+          <div class="content has-text-justified mt-4">
             <p>
               The inputs to EgoHDM are real-time acceleration and orientation measurements from six body-worn IMUs and monocular egocentric RGB images. We first initialize the system (VIM Initialization) by finding a similarity transform \(\mathbf{T}_{hc}\) that aligns inertial and camera frames with accurate scale found by leveraging body shape constraints. After initialization, the mocap-aware dense bundle adjustment (MDBA) jointly optimizes camera poses and depth images of keyframes by integrating inertial human motion constraints with RGB-based SLAM. We then construct and maintain a consistent, dense 3D map with global BA and loop closing. To reduce the depth noise influence in our global map, covariance-guided volumetric fusion is employed. Next, we create a local body-centric elevation map with a fixed resolution by projecting the global map along the direction of gravity. Lastly, in the map-aware inertial mocap module, we refine poses provided by an inertial learning-based pose estimator by introducing a physics-based correction module that leverages the elevation map to establish foot-to-ground contact. The corrected poses are fed back to the MDBA, thereby fully closing the loop between inertial-based pose estimation and SLAM-based mapping.
             </p>
@@ -212,7 +224,7 @@
       </div>
     </div>
   </section>
-
+  <!-- End Method Overview -->
 
 
 
